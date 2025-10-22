@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: rgb(37, 33, 33);
+            color: antiquewhite;
+            display:flex;
+            align-content:center;
+            align-items: center;
+        }
+
+        #username{
+            height: 30px;
+            width: 200px;
+            border-width: 0px;
+        }
+        #pass{
+            height: 30px;
+            width: 200px;
+            margin-top:20px;
+            margin-bottom: 20px;
+            border-width: 0px;
+        }
+        #form{
+            display:block;
+            height: 211px;
+            width: 200px;
+            background-color: rgb(10, 10, 10);
+            padding:5px 30px 40px 30px;
+            text-align: center;
+        }
+        #login_button{
+            height:40px;
+            width: 205px;
+            border-color:brown;
+            background-color: rgb(65, 61, 68);
+            border-radius:5px;
+            border-width: 0px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <form action="login" id="form">
+        <h1 id="form_text">Login</h1>
+        <label for="username"><input type="text" name="username" id="username" placeholder="Username"></label> <br>
+        <label for="password"><input type="password" name="password" id="pass" placeholder="Password"></label> <br>
+        <button type="button" id="login_button">Login</button>
+    </form>
+</body>
+</html>
