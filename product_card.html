@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            margin: 0;
+            background-color: #1a1a1a;
+            color: white;
+            justify-content:center;
+        }
+        .container{
+            border-radius:20px;
+            display: flex;
+            height: 500px;
+            width: 400px;
+            padding: 30px;
+            align-items: center;
+            background-color: #6b6b6b;
+            margin-top: 100px;
+            
+            flex-direction: column;
+            font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        }
+        #product_img{
+            height: 300px;
+            background-color:rgb(136, 149, 162);
+            border-radius: 20px;
+            margin-top: 30px;
+            cursor: pointer;
+            transition:transform 0.4s ease-in-out;
+        }
+        p{
+            font-size: 30px;
+        }
+        #cart_img{
+            height: 50px;
+            width: 50px;
+        }
+        button{
+            border:none;
+            background-color: red;
+            color: rgb(90, 86, 86);
+            height: 40px;
+            padding: 10px;
+            border-radius:5%;
+            cursor: pointer;
+            font-size:large;
+            margin-right: 80px;
+            margin-top: 10px;
+            transition:transform 0.4s ease-in-out;
+
+        }
+        #buttons{
+            display: flex;
+        }
+        #cart_img{
+            cursor: pointer;
+            border-radius: 20px;
+            transition:transform 0.4s ease-in-out;
+        }
+        #cart_img:hover{
+            transform:scale(1.15);
+        }
+        button:hover{
+            transform: scale(1.1);
+        }
+        #product_img:hover{
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="chaicon.png" alt="Product_pic" id="product_img"/>
+        <p>Coming Soon...</p>
+        <div id="buttons">
+            <button type="submit">Buy Now</button>
+            
+            <img src="cart.jpg" alt="cart image" id="cart_img"/>
+            
+        </div>
+    </div>
+</body>
+</html>
