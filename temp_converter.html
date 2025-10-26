@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @keyframes bounce{
+            
+            0%{transform: translateY(0px) translateX(0px);}
+            50%{transform: translateY(10px) translateX(10px);}
+            100%{transform: translateY(0px) translateX(0px);}
+        }
+        @keyframes bounce2{
+            
+            0%{transform: translateY(0px);}
+            50%{transform: translateY(10px);}
+            100%{transform: translateY(0px);}
+        }
+        @keyframes bounce3{
+            
+            0%{transform: translateX(0px);}
+            50%{transform:  translateX(-20px);}
+            100%{transform:  translateX(0px);}
+        }
+        body{
+            display: flex;
+            flex-direction: column;
+            background-color: #1a1a1a;
+            color: antiquewhite;
+            justify-content: center;
+            align-items: center;
+            margin: 0px;
+            padding: 0px;
+            user-select:none;
+        }
+        h1{
+            background-color: #00547e;
+            width: 50%;
+            text-align: center;
+            padding: 15px;
+            border-radius: 20px;
+            transition: transform 0.3s ease-in-out;
+            cursor: pointer;
+        }
+        h1:hover{
+            transform: scale(1.05);
+        }
+        .temps{
+            display: flex;
+            background-color: #024059;
+            height: 320px;
+            width: 50%;
+            flex-direction:column ;
+            align-items: center;
+            margin-top: 100px;
+            padding:30px 10px;
+            border-radius: 10px;
+            box-shadow:0px 0px 100px rgba(255,255,255,0.3);
+            font-size: 15px;
+        }
+        .degc,
+        .degk,
+        .degf{
+            height: 50px;
+            width: 90%;
+            background-color: #e2e3d8;
+            border: 0px;
+            color: rgb(39, 11, 11);
+            font-size:18px;
+            position:relative;
+            border-radius: 10px;
+            padding-left: 15px;
+            font-size: 20px;
+            color: #143a4a;
+        }
+        .degc::placeholder,
+        .degk::placeholder,
+        .degf::placeholder{
+            color: rgb(48, 4, 4);
+        }
+        .submit{
+            margin-top: 30px;
+            height: 50px;
+            width: 100px;
+            border: none;
+            background-color: #001eff;
+            border-radius: 10px;
+            cursor: pointer;
+            color: aliceblue;
+            font-size: 18px;
+            transition: transform 0.1s ease-in-out;
+        }
+        .submit:hover{
+            background-color: #17009b;
+            border: 2px solid #ff0400;
+            transform: scale(1.05);
+        }
+        .js{
+            display: block;
+            margin-left: 530px;
+            margin-top: -600px;
+            position:absolute;
+            color:rgba(0, 128, 0,0.3);
+            animation:bounce3 7s infinite;
+        }
+        .py{
+            color:rgba(83, 102, 83, 0.3);
+            position:absolute;
+            margin-top: 100px;
+            margin-left: 400px;
+            animation:bounce 8s infinite;
+
+        }
+        .c{
+            margin-bottom: 10px;
+            margin-right: 500px;
+            position:absolute;
+            color:rgba(182, 167, 30, 0.3); 
+            animation:bounce2 7s infinite;
+        }
+        footer{
+            background-color: black;
+            height: 100px;
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-evenly;
+            margin-top: 100px;
+            padding: 40px 0px;
+            text-align: center;
+        }
+
+        ul{
+            list-style-type: none;
+            font-size: smaller;
+        }
+
+        li{
+            margin-top: 10px;
+        }
+        
+        .copyright{
+            font-size: larger;
+        }
+
+        a{
+            position: relative;
+            display: inline-block;
+            text-decoration: none;
+            color: white;
+            margin-top: 4px;
+        }
+        a::after{
+            content: "";
+            height: 2px;
+            position:absolute;
+            right:0;
+            left: 0;
+            top:15px;
+            border-radius: 30px;
+            background-color: rgb(0, 115, 255);
+            transform: scaleX(0);
+            transition:transform 0.3s ease-in-out; 
+        } 
+
+        a:hover::after{
+            transform: scaleX(1);   
+        }
+
+        .links{
+            display: flex;
+            flex-direction: column;
+            font-size: smaller;
+        }
+    </style>
+</head>
+<body>
+    <h1>Temperature Converter</h1>
+    <form class="temps">
+        <label for="Celcius"> Convert From:</label>
+            <input type="number" class="degc" placeholder="Celcius"><br>
+        
+        <label for="Kelvin"> Convert To:</label>
+            <input type="number" placeholder="Kelvin" class="degk"><br>
+            <input type="number" placeholder="Fehrenheit" class="degf">
+            <button type="submit" class="submit">Convert</button>
+    </form>
+    <code class="js">console.log("Hello man")</code>
+    <code class="py">print("Nikhil")</code>
+    <code class="c">#include &#60;stdio.h&#62; </code>
+    <footer>
+        <div class="copyright">
+            &copy; 2025<br> Nikhil
+        </div>
+        <div class="links">
+            <ul>
+            <li><a href="temp_converter.html">Temperature Converter</a></li>
+            <li><a href="calculator.html">Calculator</a></li>
+            <li><a href="">Contact Us</a></li>
+            <li><a href="">Our Services</a></li>
+            <li><a href="">About Us</a></li>
+            </ul>
+        </div>
+    </footer>
+</body>
+</html>
