@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body class="bg-gray-900 flex justify-center items-center min-h-screen">
+    <div class="bg-gray-700 rounded-lg p-8 shadow-2xl max-w-sm w-full">
+        <h2 class="rounded-md px-10 bg-blue-600 inline width-min ml-20 p-2 text-3xl text-white mb-10 font-bold">Login</h2>
+        <form class="mt-10">
+            <div class="mb-4">
+                <label class="block text-sm font-medium text-gray-300 mb-2 " for="email">Email</label>
+                <input class="rounded-md  w-full px-3 py-2 bg-gray-900 text-white focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Email" type="email"/>
+            </div>
+            <div class="mb-6">
+                <label for="email" class="block text-sm font-medium text-gray-300 mb-2 ">Password</label>
+                <input  class="rounded-md w-full px-3 py-2 bg-gray-900 text-white focus:outline-none focus:ring-2 focus:ring-blue-500" type="password" placeholder="Password"/>
+            </div>
+            <button class="text-white py-2 rounded-md bg-blue-600 hover:bg-blue-700 w-full cursor-pointer" type="submit">Login</button>
+        </form>
+    </div>
+</body>
+</html>
