@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Page</title>
+    <style>
+        @keyframes coming_down{
+            0%{transform: translateY(-50px);}
+            50%{transform: translateY(5px);}
+            100%{transform: translateY(0px);}            
+        }
+        @keyframes coming_right {
+            0%{transform: translateX(-400px);}
+            50%{transform: translateX(10px);}
+            100%{transform: translateX(0px);}
+        }
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        body{
+            background-color: #1a1a1a;
+            color: white;
+        }
+        nav{
+            height: 80px;
+            background-color: #4a4646;
+            display:flex;
+            position: sticky;
+            width: 100%;
+            align-items: center;
+            gap: 100px;
+            justify-content: space-around;
+            
+        }
+        #profile{
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            text-align: center;
+            font-size: 18px;
+            animation: coming_right 2s 1;
+        }
+        #profile_pic{
+            height: 75px;
+            width: 75px;
+            border-radius: 50%;
+            border:rgb(111, 102, 102) solid 1px;
+            margin-right: 20px;
+        }
+        ul{
+            animation: coming_down 1.5s 1;
+            display: flex;
+            flex-direction: row;
+            list-style-type: none;
+            flex-wrap: wrap;
+        }
+        a{
+            text-decoration: none;
+            color: white;
+            background-color: rgb(92, 92, 199);
+            padding: 15px;
+            margin-right: 10px;
+            border-radius: 30px;
+        }
+        #abt,
+        #projects,
+        #skills,
+        #contact{
+            margin-right: 20px;
+        }
+        a:hover{
+            background-color: rgb(56, 56, 119);
+        }
+        h1{
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav id="nav_bar">
+            <div id="profile">
+            <img src="chaicon.png" alt="Profile picture" id="profile_pic"/>
+            Nikhil Kumar
+            </div>
+            <ul id="links">
+                <td id="abt"><a href="">About Me</a></td>
+                <td id="projects"><a href="">Projects</a></td>
+                <td id="skills"><a href="">Skills</a></td>
+                <td id="contact"><a href="">Contact</a></td>
+            </ul>
+        </nav>
+    </header>
+    <h1>Get info about me here</h1>
+    
+</body>
+</html>
