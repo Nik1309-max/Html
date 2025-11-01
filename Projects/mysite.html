@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Page</title>
+    <style>
+        @keyframes coming_down{
+            0%{transform: translateY(-50px);}
+            50%{transform: translateY(5px);}
+            100%{transform: translateY(0px);}            
+        }
+        @keyframes animate {
+            0%{transform: translateY(10px);}
+            50%{transform: translateY(0px);}
+            100%{transform: translateY(10px);}
+        }
+        @keyframes coming_right {
+            0%{transform: translateX(-400px);}
+            50%{transform: translateX(10px);}
+            100%{transform: translateX(0px);}
+        }
+        @keyframes bounce{           
+            0%{transform: translateY(0px) translateX(0px);}
+            50%{transform: translateY(10px) translateX(10px);}
+            100%{transform: translateY(0px) translateX(0px);}
+        }
+        @keyframes bounce2{            
+            0%{transform: translateY(0px);}
+            50%{transform: translateY(10px);}
+            100%{transform: translateY(0px);}
+        }
+        @keyframes bounce3{ 
+            0%{transform: translateX(0px);}
+            50%{transform:  translateX(-20px);}
+            100%{transform:  translateX(0px);}
+        }
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        body{
+            background-color: #1a1a1a;
+            color: white;
+            user-select: none;
+        }
+        nav{
+            height: 80px;
+            background-color: #4a4646;
+            display:flex;
+            position: sticky;
+            width: 100%;
+            align-items: center;
+            gap: 100px;
+            justify-content: space-around;
+        }
+        #profile{
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            text-align: center;
+            font-size: 18px;
+            animation: coming_right 2s 1;
+        }
+        #profile_pic{
+            height: 75px;
+            width: 75px;
+            border-radius: 50%;
+            border:rgb(111, 102, 102) solid 1px;
+            margin-right: 20px;
+        }
+        #nav_links{
+            animation: coming_down 1.5s 1;
+            display: flex;
+            flex-direction: row;
+            list-style-type: none;
+            flex-wrap: wrap;
+        }
+        .nav_btn{
+            text-decoration: none;
+            color: white;
+            background-color: rgb(92, 92, 199);
+            padding: 15px;
+            margin-right: 10px;
+            border-radius: 30px;
+            margin-right: 20px;
+        }
+        
+        .nav_btn:hover{
+            background-color: rgb(56, 56, 119);
+        }
+        
+        .circles{
+            border-radius: 50%;
+            margin-bottom: 30px;
+            margin-top: 20px;
+        }
+        #circle1{
+            background-color: rgb(12, 67, 88);
+            opacity: 0.2;
+            height: 100px;
+            width: 100px;
+            animation:animate 5s infinite;
+            box-shadow: 0px 0px 100px rgb(17, 176, 255);
+            position: absolute;
+            top: 300px;
+            left: 200px;
+            transition: opacity 1s ease-in-out;
+
+        }
+        #circle2{
+            opacity: 0.4;
+            height: 50px;
+            width: 50px;
+            animation:animate 7s infinite;
+            background-color: rgb(37, 60, 47);
+            box-shadow: 0px 0px 50px #3eb517;
+            position: absolute;
+            top: 20%;
+            left: 70%;
+            transition: opacity 1s ease-in-out;
+        }
+        #circle3{
+            opacity: 0.2;
+            height: 70px;
+            width: 70px;
+            animation:animate 6s infinite;
+            background-color: rgb(56, 59, 104);
+            box-shadow: 0px 0px 50px #44add6;
+            position: absolute;
+            top: 80%;
+            left: 50%;
+            transition: opacity 1s ease-in-out;
+        }
+        #circle1:hover{
+            opacity: 1;
+        }
+        #circle2:hover{
+            opacity: 1;
+        }
+        #circle3:hover{
+            opacity: 1;
+            box-shadow: 0px 0px 100px #44add6;
+
+        }
+        .js{
+            top: 300px;
+            left: -10px;
+            position:absolute;
+            color:rgba(0, 128, 0,0.3);
+            animation: bounce2 6s infinite;
+        }
+
+        .py{
+            top: 200px;
+            left: 600px;
+            position:absolute;
+            color:rgba(83, 102, 83, 0.3);
+            animation: bounce3 6s infinite;
+        }
+
+        .c{
+            top: 700px;
+            right: 100px;
+            position:absolute;
+            color:rgba(182, 167, 30, 0.3); 
+            animation: bounce 8s infinite;
+        } 
+
+        footer{
+            background-color: black;
+            height: 100px;
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-evenly;
+            margin-top: 500px;
+            padding: 40px 0px;
+            text-align: center;
+            
+        }
+
+        ul{
+            list-style-type: none;
+            
+        }
+
+        li{
+            margin-top: 10px;
+        }
+        
+        .copyright{
+            font-size: larger;
+        }
+
+        .footer_links{
+            position: relative;
+            display: inline-block;
+            text-decoration: none;
+            color: white;
+            margin-top: 4px;
+            font-size: smaller;
+        }
+        .footer_links::after{
+            content: "";
+            height: 2px;
+            position:absolute;
+            right:0;
+            left: 0;
+            top:15px;
+            border-radius: 30px;
+            background-color: rgb(0, 115, 255);
+            transform: scaleX(0);
+            transition:transform 0.3s ease-in-out; 
+        } 
+
+        .footer_links:hover::after{
+            transform: scaleX(1);   
+        }
+        #present{
+            background-color: rgb(56, 56, 119);
+        }
+        .project_list{
+            display: none;
+            height: 150px;
+            width: 150px;
+            top: 70px;
+            padding: 0px 20px;
+            
+            position: absolute;
+            border-radius: 20px;
+            background-color: #286154;
+            opacity: 1;
+        }
+        .project_li > a{
+            color: #ffffff;
+            text-decoration: none;
+        }
+        #projects:hover .project_list{
+                display: block;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav id="nav_bar">
+            <div id="profile">
+            <img src="mypic.jpg" alt="Profile picture" id="profile_pic"/>
+            Nikhil Kumar
+            </div>
+            <ul id="nav_links">
+                <li id="abt"><a href="" class="nav_btn" id="present">About Me</a></li>
+                <li id="projects">
+                    <a href="" class="nav_btn">Projects</a>
+                    <ul class="project_list">
+                        <li class="project_li"><a href="calculator.html">Calculator</a></li>
+                        <li class="project_li"><a href="temp_converter.html">Temperature Converter</a></li>
+                        <li class="project_li"><a href="weather.html">Weather App</a></li>
+                        <li class="project_li"><a href="expense_tracker.html">Expense Tracker</a></li>
+                        <li class="project_li"><a href="e-commerce.html">E-commerce App</a></li>
+                    </ul>
+                </li>
+                <li id="skills"><a href="" class="nav_btn">Skills</a></li>
+                <li id="contact"><a href="" class="nav_btn">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <h1>Get info about me here</h1>
+    
+    <code class="js">console.log("Hello man")</code>
+    <code class="py">print("Nikhil")</code>
+    <code class="c">#include &#60;stdio.h&#62; </code>
+    <div class="circles" id="circle1"></div>
+    <div class="circles" id="circle2"></div>
+    <div class="circles" id="circle3"></div>
+    <footer>
+        <div class="copyright">
+            &copy; 2025<br> Nikhil
+        </div>
+
+        <div class="links">
+            <ul>
+            <li><a href="temp_converter.html" class="footer_links">Temperature Converter</a></li>
+            <li><a href="calculator.html" class="footer_links">Calculator</a></li>
+            <li><a href="expense_tracker.html" class="footer_links">Expense Tracker</a></li>
+            <li><a href="e-commerce.html" class="footer_links">Basic E-commerce Site</a></li>
+            <li><a href="weather.html" class="footer_links">Weather site</a></li>
+            </ul>
+        </div>
+    </footer>
+</body>
+</html>
