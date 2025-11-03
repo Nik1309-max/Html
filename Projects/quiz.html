@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: #1a1a1a;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .container{
+            display:flex;
+            margin-top: 200px;
+            background-color: rgb(1, 53, 81);
+            min-height: 150px;
+            min-width: 300px;
+            flex-direction: column;
+            border-radius: 10px;
+            text-align: center;
+            font-size: larger;
+            font-weight: bolder;
+
+        }
+        #txt{
+            margin-top: 30px;
+        }
+        #start_btn{
+            height: 40px;
+            width: 80px;
+            color: white;
+            border-radius: 10px;
+            border-width: 0px;
+            background-color: rgb(26, 5, 167);
+            margin-left: 110px;
+            margin-top: 40px;
+            cursor: pointer;
+        }
+        #start_btn:hover{
+            background-color: rgb(22, 14, 74);
+        }
+        .questions{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-top: 30px;
+        }
+        .options{
+            display: block;
+            background-color: rgb(60, 43, 174);
+            padding: 10px;
+            border-radius: 10px;
+            max-width: 200px;
+            margin-top: 10px;
+            color: white;
+            cursor: pointer;
+        }
+        .options:hover{
+            background-color: rgb(12, 8, 38);
+
+        }
+        .hidden{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="container">
+        <span id="txt">Quiz App</span>
+        <button id="start_btn">Start Quiz</button>
+    </div>
+
+    <script src="quiz.js"></script>
+</body>
+</html>
