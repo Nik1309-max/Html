@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @keyframes animate {
+            0%{}
+            100%{transform: translateX(-84vw); transition-timing-function: ease-in-out;}
+        }
+        @keyframes animate_player {
+            0%{transform: translateY(0px);}
+            50%{transform: translateY(-14vh);}
+            100%{transform: translateY(0vh);}
+        }
+        body{
+            background-color: #0cbbd2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #container{
+            background-color: white;
+            height: 40vh;
+            margin-top: 20vh;
+            width: 90vw;
+        }
+        #grd{
+            background-color: #ee5f0c;
+            height: 4%;
+            width: 90%;
+            position:absolute;
+            top:57vh;
+        }
+        #player{
+            height: 80px;
+            width: 80px;
+            background-color: #64e514;
+            position:absolute;
+            top: 46.3vh;
+            border-radius: 20px;
+            left: 30vw;
+        }
+        .animate_player{
+            animation: animate_player 2.5s 1;
+
+        }
+        #obstacle{
+            height: 50px;
+            width: 40px;
+            background-color: #e51714;
+            position:absolute;
+            top: 50.2vh;
+            border-radius: 2px;
+            left: 89vw;
+            animation: animate 8s infinite;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="player"></div>
+        <div id="obstacle"></div>
+        <div id="grd"></div>
+    </div>
+    <script src="game.js"></script>
+</body>
+</html>
