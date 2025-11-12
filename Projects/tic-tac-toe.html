@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @keyframes win {
+            100%{background-color: red; transform: scale(1.1);}
+        }
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background-color: #548687;
+            text-align: center;
+        }
+        .container{
+            height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .game{
+            width: 60vmin;
+            height: 60vmin;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 1.5vmin;
+        }
+        .boxes{
+            text-align: cente;
+            border-radius: 1rem;
+            border: none;
+            height: 18vmin;
+            width: 18vmin;
+            background-color: white;
+            box-shadow: 0 0 1rem rgba(0,0,0,0.3);
+            font-size: 8vmin;
+            color: red;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+        }
+        #reset{
+            padding: 1rem;
+            font-size: 1.25rem;
+            background-color: #191913;
+            color: #fff;
+            border-radius: 1rem;
+            border: none;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+        }
+        #newgame{
+            transition: transform 0.3s ease-in-out;
+            padding: 1rem;
+            font-size: 1.25rem;
+            background-color: #273043;
+            color: #fff;
+            border-radius: 1rem;
+            border: none;
+            cursor: pointer;
+        }
+        #startgame{
+            padding: 1rem;
+            font-size: 1.25rem;
+            background-color: #011638;
+            color: #fff;
+            border-radius: 1rem;
+            border: none;
+            cursor: pointer;
+            margin-top: 15vmin;
+            transition: transform 0.3s ease-in-out;
+        }
+        .players{
+            background-color: #9197AE;
+            padding: 1rem;
+            font-size: 1.25rem;
+            color: #fff;
+            border-radius: 1rem;
+            margin-right: 20px;
+            margin-left: 20px;
+            margin-bottom: 20px;
+            border: none;
+            transition: transform 1s ease-in-out;
+        }
+        .boxes:hover{
+            transform: scale(1.02);
+            border: brown 3px solid;
+        }
+        #reset:hover,#newgame:hover,#startgame:hover{
+            transform: scale(1.05);
+        }
+        .hidden{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Tic Tac Toe</h1>
+    <div class="container hidden">
+        <div class="game">
+            <button class="boxes" id="b1"></button>
+            <button class="boxes" id="b2"></button>
+            <button class="boxes" id="b3"></button>
+            <button class="boxes" id="b4"></button>
+            <button class="boxes" id="b5"></button>
+            <button class="boxes" id="b6"></button>
+            <button class="boxes" id="b7"></button>
+            <button class="boxes" id="b8"></button>
+            <button class="boxes" id="b9"></button>
+        </div>
+    </div>
+    <div class="winner hidden" id="winner"></div>
+    <button class="players hidden" id="user1">Player 0: 0</button>
+    <button class="players hidden" id="user2">Player X: 0</button>
+    <button id="startgame">Start Game</button>
+    <button id="newgame" class="hidden">New Game</button> <br>
+    <button id="reset" class="hidden">Reset</button>
+    <script src="tictactoe.js"></script>
+</body>
+</html>
