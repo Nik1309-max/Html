@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @keyframes win {
+            100%{background-color: #e90090; transition: background-color 0.5s ease-in-out;}
+        }
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background-color: #121212;
+            color: white;
+            text-align: center;
+        }
+        h1{
+            background-color: #035945;
+            padding: 20px;
+        }
+        .container{
+            width: 100vw;
+            margin-top: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 50px;
+            margin-bottom: 80px;
+        }
+        img{
+            height: 20vmin;
+            width: 20vmin;
+            border-radius: 50%;
+            border: #121212 solid 5px;
+            cursor: pointer;
+        }
+        #scissor:hover,#paper:hover,#rock:hover{
+            border: brown solid 5px;
+        }
+        .players{
+            height: 50px;
+            width: 150px;
+            font-size: larger;
+            background-color: rgb(18, 104, 98);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+        }
+        .player-container{
+            margin-top: 50px;
+            text-align: center;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+        }
+        .win-message{
+            background-color: #5a0f78;
+            padding: 10px 20px;
+            font-size: 20px;
+            display: inline;
+            border-radius: 2px;
+        }
+        .choice{
+            display: flex;
+            gap: 40px;
+            justify-content: center;
+            align-items: center;
+            margin-top: 40px;
+            margin-bottom: 50px;
+        }
+        .choices{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 50px;
+            min-width: 150px;
+            max-width: 220px;
+            padding:5px 10px;
+            border-radius: 10px;
+            background-color: #637cd1;
+            font-size: 25px;
+        }
+        .hidden{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Rock Paper Scissors</h1>
+    <div class="container">
+        <img src="rock.jpg" alt="Rock image" class="images" id="rock">
+        <img src="paper.png" alt="Paper image" class="images" id="paper">
+        <img src="scissor.png" alt="Scissor image" class="images" id="scissor">
+    </div>
+    <div class="player-container">
+        <div class="players" id="user">Player: 0</div>
+        <div class="players" id="computer">Computer: 0</div>
+    </div>
+    <div class="choice">
+        <div class="choices hidden" id="player-choice">Computer: Scissor</div>
+        <div class="choices hidden" id="computer-choice"></div>
+    </div>
+    <div class="hidden win-message"></div>
+    <script src="rockpaperscissor.js"></script>
+</body>
+</html>
