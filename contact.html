@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @keyframes reappear {
+            0%{opacity: 0; transform: translateX(-30px);}
+            100%{opacity: 1;}
+        }
+        @keyframes reappear2 {
+            0%{opacity: 0; transform: translateY(-40px);}
+            100%{opacity: 1;}
+        }
+        @keyframes reappear3{
+            0%{opacity: 0;}
+            100%{opacity: 1;}
+        }
+        @media (width<1000) {
+            
+        }
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        body{
+            background-image: linear-gradient(to left, #1a1a1a,#011f28);
+            height: 100%;
+            width: 100%;
+            color: #fff;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        nav{
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            position: fixed;
+            top: 0px;
+            height: 10vh;
+            width: 100%;
+            background-color: #292525;
+        }
+        #profile{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 0.7vw;
+        }
+        #profile-id{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            width: 5vh;
+            height:5vh;
+            text-align: center;
+            color: rgb(77, 144, 231);
+            font-size: 3.5vh;
+            font-weight: bold;
+            font-family: Arial, Helvetica, sans-serif;
+            letter-spacing:-0.3vh;
+            background-color: #230373;
+            padding: 0.4vw;
+        }
+        #profile-name{
+            font-size: 3vh;
+        }
+        #nav-links{
+            display: flex;
+            list-style-type: none;
+            gap: 1vw;
+        }
+        .link{
+            color: white;
+            text-decoration: none;
+            position: relative;
+        }
+        .link::after{
+            content: "";
+            transform: scaleX(0);
+            transition: transform 0.3s ease-in-out;
+            height: 0.3vh;
+            width: 100%;
+            position: absolute;
+            top: 3vh;
+            background-color: blue;
+            border-radius: 0.2vh;
+            right: 0;
+            left: 0;
+        }
+        .link:hover::after{
+            transform: scale(1.05);
+        }
+        .contact-platforms{
+            font-size: 3vh;
+            margin-top: 20vh;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            gap: 3vh;
+        }
+        .github,
+        .linkedin,
+        .facebook,
+        .whatsapp,
+        .mail,
+        .instagram{
+            height: 8vh;
+            margin-top: 2vh;
+            width: 8vh;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        #present{
+            transform: translateY(-8px);
+            color: blue;
+        }
+        #present::after{
+            content: "";
+            transform: scaleX(0.5);
+            transition: transform 0.3s ease-in-out;
+            height: 0.3vh;
+            width: 100%;
+            position: absolute;
+            top: 3vh;
+            background-color: blue;
+            border-radius: 0.2vh;
+            right: 0;
+            left: 0;
+        }
+        .github:hover,
+        .linkedin:hover,
+        .facebook:hover,
+        .whatsapp:hover,
+        .mail:hover,
+        .instagram:hover{
+            box-shadow: 0 0 5vh rgb(0, 0, 137);
+        }
+        #contact-form{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: rgb(9, 47, 52);
+            box-shadow: 0 0 100px rgb(11, 82, 70);
+            width: 40vh;
+            height: 30vh;
+            gap: 20px;
+            margin-top: 10vh;
+            margin-left:35vw;
+            padding: 4vh;
+            border-radius: 10px;
+        }
+        #user-name,
+        #e-mail{
+            height:7vh;
+            width: 35vh;
+            padding-left: 15px;
+            background-color: #174150;
+            border: none;
+            color: #fdfeff;
+            font-size: 2.5vh;
+            border-radius: 10px;
+        }
+        #user-name::placeholder, 
+        #e-mail::placeholder{
+            color: white;
+            font-size: 2.5vh;
+        }
+        #send-btn{
+            background-color: rgb(57, 57, 206);
+            color: white;
+            width: 10vh;
+            border: none;
+            height: 5vh;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+            border-radius: 10px;
+        }
+        #send-btn:hover{
+            transform: scale(1.1);
+            background-color: rgb(41, 41, 91);
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div id="profile">
+            <span id="profile-id">NK</span>
+            <span id="profile-name">Nikhil Kumar</span>
+        </div>
+        <ul id="nav-links">
+            <li  id="present"><a href="#"  class="link" id="present">Home</a></li>
+            <li><a href="#" class="link">Projects</a></li>
+            <li><a href="#" class="link">Gallery</a></li>
+            <li><a href="#" class="link">Skills</a></li>
+            <li><a href="#" class="link">Certification</a></li>
+            <li><a href="#" class="link">Blog</a></li>
+            <li><a href="#" class="link">Resume</a></li>
+            <li><a href="#" class="link">About me</a></li>
+            <li><a href="#" class="link">Contact</a></li>
+        </ul>
+    </nav>
+
+
+    <div class="contact-platforms">
+        <a href=""><img src="github-logo.png" alt="github img" class="github"></a>
+        <a href=""><img src="linkedin-logo.png" alt="linkedin img" class="linkedin"></a>
+        <a href=""><img src="mail.png" alt="mail img" class="mail"></a>
+        <a href=""><img src="whatsapp.jpg" alt="whatsapp img" class="whatsapp"></a>
+        <a href=""><img src="insta.png" alt="instagram img" class="instagram"></a>
+        <a href=""><img src="fb.png" alt="facebook img" class="facebook"></a>
+    </div>
+    <form id="contact-form">
+        <input type="text" placeholder="Name" id="user-name">
+        <input type="text" placeholder="E-mail" id="e-mail">
+        <button id="send-btn">Send</button>
+    </form>
+    <script>
+        
+    </script>
+</body>
+</html>
