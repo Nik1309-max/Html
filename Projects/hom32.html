@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @keyframes reappear {
+            0%{opacity: 0; transform: translateX(-30px);}
+            100%{opacity: 1;}
+        }
+        @keyframes reappear2 {
+            0%{opacity: 0; transform: translateY(-40px);}
+            100%{opacity: 1;}
+        }
+        @keyframes reappear3{
+            0%{opacity: 0;}
+            100%{opacity: 1;}
+        }
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        body{
+            background-image: linear-gradient(to left, #1a1a1a,#011f28);
+            height: 100%;
+            width: 100%;
+            color: #fff;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        nav{
+            display: flex;
+            align-items: center;
+            padding: 0 5%;
+            justify-content: space-between;
+            position: fixed;
+            top: 0px;
+            height: 10vh;
+            width: 90%;
+            background-color: #292525;
+        }
+        #profile{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 0.7vw;
+        }
+        #profile-id{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            width: 5vh;
+            height:5vh;
+            text-align: center;
+            color: rgb(77, 144, 231);
+            font-size: 3.5vh;
+            font-weight: bold;
+            font-family: Arial, Helvetica, sans-serif;
+            letter-spacing:-0.3vh;
+            background-color: #230373;
+            padding: 0.4vw;
+        }
+        #profile-name{
+            font-size: 3vh;
+        }
+        .nav-btn{
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+        }
+        .lines{
+            height: 6px;
+            background-color: rgb(250, 250, 250);
+            width: 35px;
+            border-radius: 10px;
+        }
+        .nav-links{
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            padding:2vh 1vh;
+            position: absolute;
+            top:10vh;
+            right: 0;
+            height: 30vh;
+            width: 15vw;
+            background-color: rgba(2, 36, 71,1);
+            list-style-type: none;
+            gap: 1vw;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+        .link{
+            color: white;
+            font-size: 2vh;
+            text-decoration: none;
+            position: relative;
+        }
+        .link::after{
+            content: "";
+            transform: scaleX(0);
+            transition: transform 0.3s ease-in-out;
+            height: 0.3vh;
+            width: 100%;
+            position: absolute;
+            top: 2.2vh;
+            background-color: blue;
+            border-radius: 0.2vh;
+            right: 0;
+            left: 0;
+        }
+        .link:hover::after{
+            transform: scale(1.05);
+        }
+        #main-content{
+            display: flex;
+            margin-top: 15vh;
+            justify-content: space-around;
+            flex-direction: column;
+            text-align: center;
+            align-items: center;
+        }
+        .animate{
+            animation: reappear2 1s 1;
+        }
+        .intro{
+            margin-top: 5vw;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        #profile-pic{
+            height: 30vw;
+            width: 30vw;
+            border-radius: 50%;
+            box-shadow: 0 0 3vh rgb(3, 78, 255);
+            margin-right: 20px;
+            animation: reappear 1s 1;
+        }
+        #name{
+            color: rgb(77, 144, 231);
+        }
+        .intro{
+            animation: reappear3 3s 1;
+        }
+        .skills{
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 3vh;
+            gap: 1.5vh;
+            align-items: center;
+        }
+        .skill{
+            padding: 1vh 2vh;
+            border: none;
+            border-radius: 1vh;
+            font-size: 2.2vh;
+            background-color: #012d42;
+            color: rgb(255, 255, 255);
+        }
+        .info{
+            display: flex;
+            gap: 3vh;
+        }
+        .location,
+        .expertise,
+        .contact{
+            background-color: #01193c;
+            width: 20vw;
+            font-size: 4vw;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            height: 20vw;
+            border-radius: 1vh;
+        }
+        #address,
+        #expert,
+        #mail{
+            margin-top: 1vh;
+            font-size: 2.5vw;
+        }
+        footer{
+            font-size: 5vw;
+            margin-top: 10vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .contact-platforms{
+            display: flex;
+            justify-content: center;    
+            align-items: center;
+            gap: 3vw;
+        }
+        .github,
+        .linkedin,
+        .facebook,
+        .whatsapp,
+        .mail,
+        .instagram{
+            height: 10vw;
+            margin-top: 2vh;
+            width: 10vw;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        #present{
+            transform: translateY(-8px);
+            color: blue;
+        }
+        #present::after{
+            content: "";
+            transform: scaleX(0.5);
+            transition: transform 0.3s ease-in-out;
+            height: 0.3vh;
+            width: 100%;
+            position: absolute;
+            top: 2.2vh;
+            background-color: blue;
+            border-radius: 0.2vh;
+            right: 0;
+            left: 0;
+        }
+        .github:hover,
+        .linkedin:hover,
+        .facebook:hover,
+        .whatsapp:hover,
+        .mail:hover,
+        .instagram:hover{
+            box-shadow: 0 0 5vh rgb(0, 0, 137);
+        }
+        .hidden{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div id="profile">
+            <span id="profile-id">NK</span>
+            <span id="profile-name">Nikhil Kumar</span>
+        </div>
+        <div class="nav-btn">
+            <div class="lines"></div>
+            <div class="lines"></div>
+            <div class="lines"></div>
+        </div>
+        <ul class="nav-links hidden">
+            <li><a href="#" class="link" id="present">Home</a></li>
+            <li><a href="#" class="link">Projects</a></li>
+            <li><a href="#" class="link">Gallery</a></li>
+            <li><a href="#" class="link">Skills</a></li>
+            <li><a href="#" class="link">Certification</a></li>
+            <li><a href="#" class="link">Blog</a></li>
+            <li><a href="#" class="link">Resume</a></li>
+            <li><a href="#" class="link">About me</a></li>
+            <li><a href="#" class="link">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="main-content">
+        <img src="mypic.jpg" alt="" id="profile-pic">
+        <div class="intro">
+            <h1 class="animate">Hi, I'm <span id="name">Nikhil Kumar</span></h1>
+            <p id="add-text"></p><br>
+            <div class="skills">
+                <button class="skill">HTML/CSS</button>
+                <button class="skill">JAVASCRIPT</button>
+                <button class="skill">PYTHON</button>
+                <button class="skill">C</button>
+                <button class="skill">Developer</button>
+            </div>
+            <div class="info">
+                <div class="location">&#128204;Location <span id="address">Jalandhar,Punjab,India</span></div>
+                <div class="expertise">Expertise <span id="expert">Web Dev,Problem Solving</span></div>
+                <div class="contact">Contact <span id="mail">nklpu10@gmail.com</span></div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <p>Contact</p>
+        <div class="contact-platforms">
+            <a href=""><img src="github-logo.png" alt="github img" class="github"></a>
+            <a href=""><img src="linkedin-logo.png" alt="linkedin img" class="linkedin"></a>
+            <a href=""><img src="mail.png" alt="mail img" class="mail"></a>
+            <a href=""><img src="whatsapp.jpg" alt="whatsapp img" class="whatsapp"></a>
+            <a href=""><img src="insta.png" alt="instagram img" class="instagram"></a>
+            <a href=""><img src="fb.png" alt="facebook img" class="facebook"></a>
+        </div>
+    </footer>
+    <script>
+        const navBtn =document.querySelector(".nav-btn")
+        const navLinks = document.querySelector('.nav-links')
+        const p = document.getElementById("add-text")
+        const txt = "Frontend Developer | Tech Explorer"
+        for(let i = 0;i<txt.length;i++){
+            setTimeout(()=> {
+                p.innerHTML += txt[i]
+            },100*i)
+        }
+        navBtn.addEventListener('mouseover',() => {
+            navLinks.classList.remove('hidden')
+        })
+        navBtn.addEventListener('mouseout',() => {
+            navLinks.classList.add('hidden')
+        })
+    </script>
+</body>
+</html>
