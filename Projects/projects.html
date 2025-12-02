@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Projects</title>
     <style>
         @keyframes reappear {
             0%{opacity: 0; transform: translateX(-30px);}
@@ -14,17 +14,16 @@
             100%{opacity: 1;}
         }
         @keyframes reappear3{
-            0%{opacity: 0;}
+            0%{opacity: 0; transform: translateX(60px);}
             100%{opacity: 1;}
         }
-        @media (width<1000) {
-            
-        }
+        
         *{
             padding: 0;
             margin: 0;
         }
         body{
+            user-select: none;
             background-image: linear-gradient(to left, #1a1a1a,#011f28);
             height: 100%;
             width: 100%;
@@ -182,6 +181,7 @@
         #present{
             transform: translateY(-8px);
             color: blue;
+            animation: reappear2 0.5s 1;
         }
         #present::after{
             content: "";
@@ -204,14 +204,7 @@
         .instagram:hover{
             box-shadow: 0 0 5vh rgb(0, 0, 137);
         }
-        .images{
-            height: 20vh;
-            width: 30vw;
-            border: none;
-            margin-right: 30px;
-            margin-left: 30px;
-            
-        }
+        
         .projects-container{
             background-image: linear-gradient(to left, rgb(20, 44, 57),rgb(6, 6, 39));
             margin-top: 20vh;
@@ -221,15 +214,45 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: space-between;
-            margin-left: 5%;
+            gap: 50px;
+            margin-left: 3%;
+            justify-content: center;
+            padding: 5vh 2vw;
         }
         #img-grid{
-            display: grid;
-            grid-template-columns:repeat(2,1fr);
-            /* grid-template-rows: 30vh 30vh; */
-            gap: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 100px;
+            align-items: center;
             list-style-type: none;
+        }
+        .vid{
+            height: 450px;
+            margin-bottom: 20px;
+        }
+
+        .text{
+            display: flex;
+            font-size: 20px;
+            flex-direction: row;
+            gap: 20px;
+            animation: reappear 1s 1;
+        }
+        .project-lists{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .project-title{
+            color: rgb(2, 37, 64);
+            background-color: rgb(31, 232, 239);
+            padding: 0 30px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+        .vid{
+            animation: reappear3 1s 1;
         }
     </style>
 </head>
@@ -240,9 +263,8 @@
             <span id="profile-name">Nikhil Kumar</span>
         </div>
         <ul id="nav-links">
-            <li><a href="#"  class="link">Home</a></li>
+            <li><a href="home.html"  class="link">Home</a></li>
             <li id="present"><a href="#" class="link" id="present">Projects</a></li>
-            <li><a href="#" class="link">Gallery</a></li>
             <li><a href="skills.html" class="link">Skills</a></li>
             <li><a href="certification.html" class="link">Certification</a></li>
             <li><a href="#" class="link">Resume</a></li>
@@ -252,24 +274,33 @@
     </nav>
 
     <section class="projects-container">
-        Python Projects
+        <div id="add-text"></div>
         <ul id="img-grid">
-            <li><img src="github-logo.png" alt="" class="images"></li>
-            <li><img src="" alt="" class="images"></li>
-            <li><img src="" alt="" class="images"></li>
-            <li><img src="" alt="" class="images"></li>
-            <li><img src="" alt="" class="images"></li>
-            <li><img src="" alt="" class="images"></li>
-            <li><img src="" alt="" class="images"></li>
-            <li><img src="" alt="" class="images"></li>
+            <li class="project-lists">
+                <h1 class="project-title">Bank System</h1>
+                <div class="text">
+                    <video src="banksyspy.mp4" autoplay loop muted class="vid" id="pyvid"></video>
+                    In this python project user can make a new account can deposit money or debit it too, and all the details of user like name, money, else are kept in local system as database. This project only uses basics of python.
+                </div>
+                <a href="https://github.com/Nik1309-max/Python/blob/main/Bank_system.py" style="color: #38b7f3;">Click here to see the code...</a>
+            </li>
+            <li class="project-lists">
+                <h1 class="project-title">Stone Paper Scissor</h1>
+                <div class="text">
+                    
+                    In this python project user can play famous stone paper scissor game with computer. Computer choices are made by using random module and else part is basic python.
+                    <video src="stone-paper-scissor.mp4" autoplay loop muted class="vid" id="pyvid"></video>
+                </div>
+                <a href="https://github.com/Nik1309-max/Python/blob/main/Stone_paper_scissor_game.py" style="color: #38b7f3;">Click here to see the code...</a>
+            </li>
         </ul>
     </section>
     
     <footer>
         <p>Contact</p>
         <div class="contact-platforms">
-            <a href=""><img src="github-logo.png" alt="github img" class="github"></a>
-            <a href=""><img src="linkedin-logo.png" alt="linkedin img" class="linkedin"></a>
+            <a href="https://github.com/Nik1309-max"><img src="github-logo.png" alt="github img" class="github"></a>
+            <a href="https://www.linkedin.com/in/nk90d/"><img src="linkedin-logo.png" alt="linkedin img" class="linkedin"></a>
             <a href=""><img src="mail.png" alt="mail img" class="mail"></a>
             <a href=""><img src="whatsapp.jpg" alt="whatsapp img" class="whatsapp"></a>
             <a href=""><img src="insta.png" alt="instagram img" class="instagram"></a>
@@ -278,7 +309,7 @@
     </footer>
     <script>
         const p = document.getElementById("add-text")
-        const txt = "Frontend Developer | Tech Explorer"
+        const txt = "Python Projects"
         for(let i = 0;i<txt.length;i++){
             setTimeout(()=> {
                 p.innerHTML += txt[i]
