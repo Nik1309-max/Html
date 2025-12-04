@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Portfolio Home</title>
     <style>
         @keyframes reappear {
             0%{opacity: 0; transform: translateX(-30px);}
@@ -17,14 +17,12 @@
             0%{opacity: 0;}
             100%{opacity: 1;}
         }
-        @media (width<1000) {
-            
-        }
         *{
             padding: 0;
             margin: 0;
         }
         body{
+            user-select: none;
             background-image: linear-gradient(to left, #1a1a1a,#011f28);
             height: 100%;
             width: 100%;
@@ -101,13 +99,18 @@
         .animate{
             animation: reappear2 1s 1;
         }
+        @keyframes ping {
+            0%{box-shadow: 0 0 2vh rgb(3, 78, 255);}
+            50%{box-shadow: 0 0 5vh rgb(3, 78, 255);}
+            100%{box-shadow: 0 0 2vh rgb(3, 78, 255);}
+        }
         #profile-pic{
             height: 25vh;
             width: 25vh;
+            box-shadow: 0 0 2vh rgb(3, 78, 255);
             border-radius: 50%;
-            box-shadow: 0 0 3vh rgb(3, 78, 255);
             margin-right: 20px;
-            animation: reappear 1s 1;
+            animation: ping 4s infinite,reappear 1s 1;
         }
         #name{
             color: rgb(77, 144, 231);
@@ -182,6 +185,7 @@
         #present{
             transform: translateY(-8px);
             color: blue;
+            animation: reappear2 0.5s 1;
         }
         #present::after{
             content: "";
@@ -213,20 +217,18 @@
             <span id="profile-name">Nikhil Kumar</span>
         </div>
         <ul id="nav-links">
-            <li  id="present"><a href="#"  class="link" id="present">Home</a></li>
-            <li><a href="#" class="link">Projects</a></li>
-            <li><a href="#" class="link">Gallery</a></li>
-            <li><a href="#" class="link">Skills</a></li>
-            <li><a href="#" class="link">Certification</a></li>
-            <li><a href="#" class="link">Blog</a></li>
-            <li><a href="#" class="link">Resume</a></li>
-            <li><a href="#" class="link">About me</a></li>
-            <li><a href="#" class="link">Contact</a></li>
+            <li  id="present"><a href="home.html"  class="link" id="present">Home</a></li>
+            <li><a href="projects.html" class="link">Projects</a></li>
+            <li><a href="skills.html" class="link">Skills</a></li>
+            <li><a href="certification.html" class="link">Certification</a></li>
+            <li><a href="resume.html" class="link">Resume</a></li>
+            <li><a href="about.html" class="link">About me</a></li>
+            <li><a href="contact.html" class="link">Contact</a></li>
         </ul>
     </nav>
 
     <section id="main-content">
-        <img src="mypic.jpg" alt="" id="profile-pic">
+        <img src="profilepic.png" alt="" id="profile-pic">
         <div class="intro">
             <h1 class="animate">Hi, I'm <span id="name">Nikhil Kumar</span></h1>
             <p id="add-text"></p><br>
@@ -247,8 +249,8 @@
     <footer>
         <p>Contact</p>
         <div class="contact-platforms">
-            <a href=""><img src="github-logo.png" alt="github img" class="github"></a>
-            <a href=""><img src="linkedin-logo.png" alt="linkedin img" class="linkedin"></a>
+            <a href="https://github.com/Nik1309-max"><img src="github-logo.png" alt="github img" class="github"></a>
+            <a href="https://www.linkedin.com/in/nk90d/"><img src="linkedin-logo.png" alt="linkedin img" class="linkedin"></a>
             <a href=""><img src="mail.png" alt="mail img" class="mail"></a>
             <a href=""><img src="whatsapp.jpg" alt="whatsapp img" class="whatsapp"></a>
             <a href=""><img src="insta.png" alt="instagram img" class="instagram"></a>
