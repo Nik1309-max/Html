@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Be</title>
+    <style>
+        @keyframes reappear {
+            0%{opacity: 0; transform: translateX(-30px);}
+            100%{opacity: 1;}
+        }
+        @keyframes reappear2 {
+            0%{opacity: 0; transform: translateY(-40px);}
+            100%{opacity: 1;}
+        }
+        @keyframes reappear3{
+            0%{opacity: 0;}
+            100%{opacity: 1;}
+        }
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        body{
+            user-select: none;
+            background-image: linear-gradient(to left, #1a1a1a,#011f28);
+            height: 100%;
+            width: 100%;
+            color: #fff;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        nav{
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            position: fixed;
+            top: 0px;
+            height: 10vh;
+            width: 100%;
+            background-color: #292525;
+        }
+        #profile{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 0.7vw;
+        }
+        #profile-id{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            width: 5vh;
+            height:5vh;
+            text-align: center;
+            color: rgb(77, 144, 231);
+            font-size: 3.5vh;
+            font-weight: bold;
+            font-family: Arial, Helvetica, sans-serif;
+            letter-spacing:-0.3vh;
+            background-color: #230373;
+            padding: 0.4vw;
+        }
+        #profile-name{
+            font-size: 3vh;
+        }
+        #nav-links{
+            display: flex;
+            list-style-type: none;
+            gap: 1vw;
+        }
+        .link{
+            color: white;
+            text-decoration: none;
+            position: relative;
+        }
+        .link::after{
+            content: "";
+            transform: scaleX(0);
+            transition: transform 0.3s ease-in-out;
+            height: 0.3vh;
+            width: 100%;
+            position: absolute;
+            top: 3vh;
+            background-color: blue;
+            border-radius: 0.2vh;
+            right: 0;
+            left: 0;
+        }
+        .link:hover::after{
+            transform: scale(1.05);
+        }
+        #main-content{
+            display: flex;
+            margin-top: 30vh;
+            justify-content: space-around;
+            align-items: center;
+        }
+        .animate{
+            animation: reappear2 1s 1;
+        }
+        @keyframes ping {
+            0%{box-shadow: 0 0 2vh rgb(3, 78, 255);}
+            50%{box-shadow: 0 0 5vh rgb(3, 78, 255);}
+            100%{box-shadow: 0 0 2vh rgb(3, 78, 255);}
+        }
+        #profile-pic{
+            height: 25vh;
+            width: 25vh;
+            box-shadow: 0 0 2vh rgb(3, 78, 255);
+            border-radius: 50%;
+            margin-right: 20px;
+            animation: ping 4s infinite,reappear 1s 1;
+        }
+        #name{
+            color: rgb(77, 144, 231);
+        }
+        .intro{
+            animation: reappear3 3s 1;
+        }
+        .skills{
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 3vh;
+            gap: 1.5vh;
+            align-items: center;
+        }
+        .skill{
+            padding: 1vh 2vh;
+            border: none;
+            border-radius: 1vh;
+            font-size: 2.2vh;
+            background-color: #012d42;
+            color: rgb(255, 255, 255);
+        }
+        .info{
+            display: flex;
+            gap: 3vh;
+        }
+        .location,
+        .expertise,
+        .contact{
+            background-color: #01193c;
+            width: 20vw;
+            font-size: 2.5vh;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            height: 10vh;
+            border-radius: 1vh;
+        }
+        #address,
+        #expert,
+        #mail{
+            margin-top: 1vh;
+            font-size: 1.7vh;
+        }
+        footer{
+            font-size: 3vh;
+            margin-top: 20vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .contact-platforms{
+            display: flex;
+            justify-content: center;    
+            align-items: center;
+            gap: 3vh;
+        }
+        .github,
+        .linkedin,
+        .facebook,
+        .whatsapp,
+        .mail,
+        .instagram{
+            height: 8vh;
+            margin-top: 2vh;
+            width: 8vh;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        #present{
+            transform: translateY(-8px);
+            color: blue;
+            animation: reappear2 0.5s 1;
+        }
+        #present::after{
+            content: "";
+            transform: scaleX(0.5);
+            transition: transform 0.3s ease-in-out;
+            height: 0.3vh;
+            width: 100%;
+            position: absolute;
+            top: 3vh;
+            background-color: blue;
+            border-radius: 0.2vh;
+            right: 0;
+            left: 0;
+        }
+        .github:hover,
+        .linkedin:hover,
+        .facebook:hover,
+        .whatsapp:hover,
+        .mail:hover,
+        .instagram:hover{
+            box-shadow: 0 0 5vh rgb(0, 0, 137);
+        }
+        .text{
+            margin-top: 15vh;
+        }
+        .text>h1{
+            background-color: #3049c6;
+            border-radius: 10px;
+            padding: 1%;
+            width: 20vh;
+            margin-left: 30px;
+            margin-bottom: 20px;
+        }
+        .text>p{
+            font-size: larger;
+            margin-left: 15px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div id="profile">
+            <span id="profile-id">NK</span>
+            <span id="profile-name">Nikhil Kumar</span>
+        </div>
+        <ul id="nav-links">
+            <li><a href="home.html" class="link">Home</a></li>
+            <li><a href="projects.html" class="link">Projects</a></li>
+            <li><a href="skills.html" class="link">Skills</a></li>
+            <li><a href="certification.html" class="link">Certification</a></li>
+            <li><a href="resume.html" class="link">Resume</a></li>
+            <li id="present"><a href="about.html" class="link" id="present">About me</a></li>
+            <li><a href="contact.html" class="link">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="text">
+        <h1>About Me</h1>
+        <p>Hello there I a Nikhil currently studying in Lovely Professional University, persuing my B.Tech degree in Computer Science Engineering. I am a tech explorer, enthusiast about modern tech. <br> <br> Let's catchup about tech, Click on any platform below to contact me.</p>
+    </section>
+
+    
+    <footer>
+        <p>Contact</p>
+        <div class="contact-platforms">
+            <a href="https://github.com/Nik1309-max"><img src="github-logo.png" alt="github img" class="github"></a>
+            <a href="https://www.linkedin.com/in/nk90d/"><img src="linkedin-logo.png" alt="linkedin img" class="linkedin"></a>
+            <a href=""><img src="mail.png" alt="mail img" class="mail"></a>
+            <a href=""><img src="whatsapp.jpg" alt="whatsapp img" class="whatsapp"></a>
+            <a href=""><img src="insta.png" alt="instagram img" class="instagram"></a>
+            <a href=""><img src="fb.png" alt="facebook img" class="facebook"></a>
+        </div>
+    </footer>
+    
+</body>
+</html>
