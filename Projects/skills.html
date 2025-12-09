@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Skill Sets</title>
     <style>
         @keyframes reappear {
             0%{opacity: 0; transform: translateX(-30px);}
@@ -17,14 +17,13 @@
             0%{opacity: 0;}
             100%{opacity: 1;}
         }
-        @media (width<1000) {
-            
-        }
+        
         *{
             padding: 0;
             margin: 0;
         }
         body{
+            user-select: none;
             background-image: linear-gradient(to left, #1a1a1a,#011f28);
             height: 100%;
             width: 100%;
@@ -92,14 +91,23 @@
         .link:hover::after{
             transform: scale(1.05);
         }
-        #main-content{
-            display: flex;
-            margin-top: 30vh;
-            justify-content: space-around;
-            align-items: center;
+        #present{
+            transform: translateY(-8px);
+            color: blue;
+            animation: reappear2 0.5s 1;
         }
-        .animate{
-            animation: reappear2 1s 1;
+        #present::after{
+            content: "";
+            transform: scaleX(0.5);
+            transition: transform 0.3s ease-in-out;
+            height: 0.3vh;
+            width: 100%;
+            position: absolute;
+            top: 3vh;
+            background-color: blue;
+            border-radius: 0.2vh;
+            right: 0;
+            left: 0;
         }
         #profile-pic{
             height: 25vh;
@@ -179,23 +187,6 @@
             border-radius: 50%;
             cursor: pointer;
         }
-        #present{
-            transform: translateY(-8px);
-            color: blue;
-        }
-        #present::after{
-            content: "";
-            transform: scaleX(0.5);
-            transition: transform 0.3s ease-in-out;
-            height: 0.3vh;
-            width: 100%;
-            position: absolute;
-            top: 3vh;
-            background-color: blue;
-            border-radius: 0.2vh;
-            right: 0;
-            left: 0;
-        }
         .github:hover,
         .linkedin:hover,
         .facebook:hover,
@@ -219,14 +210,13 @@
             100%{transform: translateY(0);}
         }
         .skill-sets{
-            background-color: #291515;
             text-align: center;
             overflow: hidden;
             display: flex;
             align-items: center;
             justify-content: center;
-            height: 100px;
-            width: 100px;
+            height: 80px;
+            width: 80px;
             border-radius: 50%;
             cursor: pointer;
             box-shadow: 0 0 20px rgb(81, 63, 170);
@@ -239,12 +229,16 @@
         #py{
             animation: skill-mover 4s infinite;
             top: 25vh;
+            animation-delay: 0.55s;
+
             right: 25vw;
             position: absolute;
         }
         #html{
-            top: 30vh;
-            right: 30vw;
+            top: 35vh;
+            right: 34vw;
+            animation-delay: 0.2s;
+
             animation: skill-mover 3s infinite;
             position: absolute;
         }
@@ -252,24 +246,32 @@
             animation: skill-mover 5s infinite;
             top: 25vh;
             left: 45vw;
+            animation-delay: 0.7s;
+
             position: absolute;
         }
         #np{
             animation: skill-mover 4.5s infinite;
             top: 25vh;
             right: 60vw;
+            animation-delay: 0.5s;
+
             position: absolute;
         }
         #pandas{
             animation: skill-mover 5.5s infinite;
-            top: 44vh;
-            right: 30vw;
+            top: 47vh;
+            right: 25vw;
+            animation-delay: 0.4s;
+
             position: absolute;
         }
         #mpl{
             animation: skill-mover 6s infinite;
             top: 44vh;
-            right: 10vw;
+            right: 11vw;
+            animation-delay: 0.1s;
+
             position: absolute;
         }
         #tw{
@@ -277,20 +279,27 @@
             top: 25vh;
             right: 10vw;
             position: absolute;
+            animation-delay: 0.4s;
+
         }
         #c{
             animation: skill-mover 3.5s infinite;
             top: 40vh;
             left: 40vw;
             position: absolute;
+            animation-delay: 0.35s;
         }
         #bs{
+            animation-delay: 0.6s;
+
             animation: skill-mover 5.6s infinite;
             top: 40vh;
             left: 20vw;
             position: absolute;
         }
         #css{
+            animation-delay: 0.4s;
+
             animation: skill-mover 4.9s infinite;
             top: 24vh;
             left: 10vw;
@@ -306,48 +315,44 @@
         </div>
         <ul id="nav-links">
             <li><a href="home.html"  class="link">Home</a></li>
-            <li><a href="#" class="link">Projects</a></li>
-            <li><a href="#" class="link">Gallery</a></li>
-            <li id="present"><a href="#" class="link" id="present">Skills</a></li>
+            <li><a href="projects.html" class="link">Projects</a></li>
+            <li id="present"><a href="skills.html" class="link" id="present">Skills</a></li>
             <li><a href="certification.html" class="link">Certification</a></li>
-            <li><a href="#" class="link">Resume</a></li>
-            <li><a href="#" class="link">About me</a></li>
+            <li><a href="resume.html" class="link">Resume</a></li>
+            <li><a href="about.html" class="link">About me</a></li>
             <li><a href="contact.html" class="link">Contact</a></li>
         </ul>
     </nav>
 
     <section id="skills-container">
-        <div class="skill-sets" id="py">PYTHON</div>
-        <div class="skill-sets" id="html">HTML</div>
-        <div class="skill-sets" id="js">JAVASCRIPT</div>
-        <div class="skill-sets" id="css">CSS</div>
-        <div class="skill-sets" id="np">NumPy</div>
-        <div class="skill-sets" id="mpl">MatPlotLib</div>
-        <div class="skill-sets" id="pandas">Pandas</div>
-        <div class="skill-sets" id="tw">TailWind</div>
-        <div class="skill-sets" id="c">C</div>
-        <div class="skill-sets" id="bs">BootStrap</div>
+        <img src="py-logo.jpg" alt="" class="skill-sets" id="py">
+        <img src="html-logo.png" alt="" class="skill-sets" id="html">
+
+        <img src="js-logo.png" alt="" class="skill-sets" id="js">
+        <img src="css_logo.jpg" alt="" class="skill-sets" id="css">
+        <img src="numpy-logo.png" alt="" class="skill-sets" id="np">
+        <img src="mat-logo.png" alt="" class="skill-sets" id="mpl">
+
+        <img src="pandas-logo.png" alt="" class="skill-sets" id="pandas">
+
+        <img src="tailwind-logo.jpg" alt="" class="skill-sets" id="tw">
+
+        <img src="c-logo.jpg" alt="" class="skill-sets" id="c">
+
+        <img src="bootstrap-logo.png" alt="" class="skill-sets" id="bs">
+
     </section>
     
     <footer>
         <p>Contact</p>
         <div class="contact-platforms">
-            <a href=""><img src="github-logo.png" alt="github img" class="github"></a>
-            <a href=""><img src="linkedin-logo.png" alt="linkedin img" class="linkedin"></a>
+            <a href="https://github.com/Nik1309-max"><img src="github-logo.png" alt="github img" class="github"></a>
+            <a href="https://www.linkedin.com/in/nk90d/"><img src="linkedin-logo.png" alt="linkedin img" class="linkedin"></a>
             <a href=""><img src="mail.png" alt="mail img" class="mail"></a>
             <a href=""><img src="whatsapp.jpg" alt="whatsapp img" class="whatsapp"></a>
             <a href=""><img src="insta.png" alt="instagram img" class="instagram"></a>
             <a href=""><img src="fb.png" alt="facebook img" class="facebook"></a>
         </div>
     </footer>
-    <script>
-        const p = document.getElementById("add-text")
-        const txt = "Frontend Developer | Tech Explorer"
-        for(let i = 0;i<txt.length;i++){
-            setTimeout(()=> {
-                p.innerHTML += txt[i]
-            },100*i)
-        }
-    </script>
 </body>
 </html>
