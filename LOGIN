@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background-color: #212122;
+            color: white;
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 10vh;
+        }
+        #heading{
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-size: 50px;
+            background-image: linear-gradient(200deg, rgb(8, 40, 64),rgb(1, 113, 136));
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 2vh 0;
+            width: 100vw;
+        }
+        #login-content{
+            width: 50vw;
+            background-color: #036966;
+            border-radius: 50px 0 50px 0;
+            height: 60vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 50px;
+        }
+        .selection{
+            font-size: 25px;
+            background-color: #00254f;
+            color: rgb(0, 255, 217);
+            width: 35%;
+            border-radius: 20px;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            cursor:default;
+            margin-top: 5vh;
+            margin-bottom: 4vh;
+        }
+        #login-btn,
+        #signin-btn{
+            cursor: pointer;
+            width: 80px;
+            border-radius: 10px;
+            padding:5px 10px;
+        }
+        #login-btn{
+            background-color: #5b2ee3;
+            width: 80px;
+
+        }
+        #login{
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            justify-content: center;
+            align-items: center;
+        }
+        .login-submit-btn{
+            height: 5vh;
+            font-size: 20px;
+            border-radius: 10px;
+            border: none;
+            background-color: #1294ff;
+            color: white;
+            font-weight: 1000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 10vh;
+        }
+        .login-input{
+            height: 6vh;
+            width: 40vh;
+            border-radius: 5px;
+            border: none;   
+            padding: 0px 10px;       
+        }
+        .login-input[placeholder]{
+            font-size: 25px;
+        }
+        .hidden{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="heading">Expense Tracker Application</h1>
+
+    <section id="login-content">
+        <div class="selection">
+            <div id="login-btn">Login</div>|
+            <div id="signin-btn">SignIn</div>
+        </div>
+        <div id="login" class="hidden">
+            <input type="text" placeholder="Username" class="login-input">
+            <input type="password" placeholder="Password" class="login-input">
+            <button id="login_btn" class="login-submit-btn">Login</button>
+        </div>
+        <div id="signin" class="hidden">
+            <input type="text" placeholder="Name">
+            <input type="text" placeholder="Username">
+            <input type="text" placeholder="Password">
+            <input type="text" placeholder="Confirm Password">
+            <button id="submit_btn">Submit</button>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener("DOMContentLoaded",() => {
+            const loginBtn = document.getElementById("login-btn");
+            const signinBtn = document.getElementById("signin-btn");
+            const loginContent = document.getElementById("login")
+            const signinContent = document.getElementById("signin")
+            loginBtn.addEventListener('click',() => {
+                loginBtn.style.backgroundColor = "red"
+                signinBtn.style.backgroundColor = ""
+
+                signinContent.classList.add("hidden")
+                loginContent.classList.remove("hidden")
+            })
+            signinBtn.addEventListener('click',() => {
+                signinBtn.style.backgroundColor = "red"
+                loginBtn.style.backgroundColor = ""
+
+                loginContent.classList.add("hidden")
+                signinContent.classList.remove("hidden")
+            })
+        })
+    </script>
+</body>
+</html>
