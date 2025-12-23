@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background-color: #1a1a1a;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 50px;
+        }
+        #clr{
+            margin-top: 20vh;
+            height: 200px;
+            width: 200px;
+            border: 2px solid rgb(29, 148, 169);
+            background-color: brown;
+        }
+        #btn{
+            height: 40px;
+            width: 10vh;
+            background-color: rgb(56, 133, 133);
+            border: none;
+            cursor: pointer;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="clr" id="clr"></div>
+    <button id="btn">Change</button>
+
+
+</body>
+    <script>
+        const btn = document.getElementById("btn")
+        const clr = document.getElementById("clr")
+
+        const arr = ["white","red","yellow","blue","green",'purple',"white","red","yellow","blue","green",'purple',"white","red","yellow","blue","green",'purple']
+        btn.addEventListener('click',()=>{
+            let randomColor = Math.floor(Math.random()*arr.length)
+            setTimeout(() => {
+                
+                clr.style.backgroundColor = arr[randomColor]
+            }, 1000);
+        })
+    </script>
+</html>
