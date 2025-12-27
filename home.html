@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        body{
+            background-color: #ffffff;
+        }
+        .nav-container{
+            background-color: rgb(36, 229, 247);
+            display: flex;
+            width: 100%;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-around;
+            gap: 20px;
+            padding: 1% 0;
+        }
+        .navlinks{
+            text-align: center;
+            background-color: #ffffff;
+            padding: 10px;
+            font-size: 15px;
+            font-weight:bolder;
+            transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+            cursor: pointer;
+            position: relative;
+            border-radius: 20px;
+        }
+        .navlinks::after{
+            content: "";
+            position: absolute;
+            height: 2px;
+            width: 60%;
+            transform: scale(0);
+            transition: transform 0.4s ease-in-out;
+            background-color: rgb(36, 229, 247);
+            top: 30px;
+            border-radius: 20px;
+            left: 20%;
+        }
+        .navlinks:hover{
+            box-shadow: 0 0 10px rgb(29, 18, 18);
+        }
+        .navlinks:hover::after{
+            transform: scale(0.8);
+        }
+        .navlinks-container > a {
+            color: rgb(36, 229, 247);
+            text-decoration: none;
+        }
+        .title{
+            background-color: #191947;
+            font-size: 25px;
+            font-weight: 1000;
+            height: 40px;
+            display: flex;
+            padding: 0px 20px;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        .title_link{
+            color: rgb(36, 229, 247);
+            text-decoration: none;
+        }
+        .navlinks-container{
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+        }
+        footer{
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background-color: rgb(36, 229, 247);
+            color: white;
+            font-size: larger;
+            font-weight: 600;
+            user-select: none;
+            padding: 2vh 0;
+        }
+        .images{
+            position: relative;
+            margin-top: 2vh;
+            color: aqua;
+        }
+        .image{
+            height: 150px;
+            width: 300px;
+            background-color: #fff;
+            border-radius: 20px;
+            position: absolute;
+            left: 20px;
+            box-shadow: 0px 0px 20px rgb(119, 110, 110);
+            cursor: pointer;
+        }
+        @keyframes animate {
+            from{transform: translateY(0);}
+            to{transform: translateY(170px);}
+        }
+        @keyframes animate2 {
+            from{transform: translateY(0);}
+            to{transform: translateY(340px);}
+        }
+        #image2{
+            animation: animate 2s 1;
+            transform: translateY(170px);
+        }
+        #image3{
+            animation: animate2 2s 1;
+            transform: translateY(340px);
+            /* transform: translateY(210px); */
+        }
+
+        .images:hover{
+            width: 100%;
+        }
+        
+    </style>
+</head>
+<body>
+    <nav class="nav-container">
+        <div class="title"><a href="" class="title_link">KK ELECTRICS</a></div>
+        <div class="navlinks-container">
+            <a href="" class="navlinks">Home</a>
+            <a href="" class="navlinks">Contact</a>
+            <a href="" class="navlinks">About Us</a>
+            <a href="" class="navlinks">Products</a>
+        </div>
+    </nav>
+
+    <section class="images">
+        <h1>Our Products</h1>
+        <img src="fan.png" alt="" class="image" id="image1">
+        <img src="ac.avif" alt="" class="image" id="image2">
+        <img src="tubelight.jpg" alt="" class="image" id="image3">
+    </section>
+    <footer>
+        &copy; 2025 <br>KK ELECTRICS
+    </footer>
+</body>
+</html>
