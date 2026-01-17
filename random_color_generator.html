@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Generator</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #1a1a1a;
+            flex-direction: column;
+        }
+        #btn{
+            height: 50px;
+            width: 100px;
+            align-items: center;
+            justify-content: center;
+            border: none;
+            color: white;
+            font-weight: 500;
+            font-size: 20px;
+            border-radius: 10px;
+            background-color: rgb(0, 76, 255);
+            display: flex;
+            transition: transform 0.2s ease-in-out;
+            cursor: pointer;
+        }
+        #bg_change{
+            margin-top: 200px;
+            margin-bottom: 100px;
+            display: block;
+            height: 200px;
+            background-color: #fff;
+            width: 200px;
+        }
+        #btn:hover{
+            transform: scale(1.1);
+        }
+        #color{
+            color: white;
+            font-size: 30px;
+            font-family: Arial, Helvetica, sans-serif;
+            position: absolute;
+            top: 170px;
+        }
+
+    </style>
+</head>
+<body>
+    <section id="color"></section>
+    <section id="bg_change"></section>
+    <button id="btn">Change</button>
+    
+    
+    
+    <script>
+        
+        document.addEventListener("DOMContentLoaded",()=>{
+            let container = document.getElementById("bg_change");
+            let btn = document.getElementById("btn");
+            let chars = "0123456789ABCDEF";
+            let color_code = document.getElementById("color");
+            btn.addEventListener('click',()=>{
+                let color = "#"
+                for(let i=0;i<6;i++){
+                    let random_num = Math.floor(Math.random()*chars.length);
+                    color += chars[random_num]
+                }; 
+                container.style.backgroundColor = color;
+                color_code.textContent = color;
+            });
+        });
+    </script>
+</body>
+</html>
