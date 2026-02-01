@@ -1,0 +1,151 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    background-color: #000;
+    color: white;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight:bold;
+}
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 8vh;
+    width: 94vw;
+    padding: 0vh 3vw;
+    position: fixed;
+    top: 0px;
+}
+#site_logo{
+    height: 6vh;
+    width: 20vw;
+}
+#nav_btn{
+    display: flex;
+    gap: 5px;
+    flex-direction: column;
+    cursor: pointer;
+}
+.lines{  
+    background-color: white;
+    width: 15px;
+    height: 1.5px;
+    border-radius: 10px;
+}
+footer{
+    display:flex;
+    flex-direction: column;
+    width: 70vw;
+    margin-left: 15vw;
+}
+#path{
+    margin-bottom: 10vh;
+    font-weight: 500;
+}
+#link_lists{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    font-size: 16px;
+}
+.links_container{
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+}
+.arrow{
+    transform: rotate(-90deg);
+    font-size: 30px;
+}
+#socialmedia_sites_links{
+    margin: 5vh 0;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.social_media_logo{
+    height: 4vh;
+    width: 4vh;
+    border-radius: 10px;
+}
+#hostinger{
+    text-decoration: none;
+    color: white;
+}
+#important_links{
+    margin-top: 2vh;
+    display: flex;
+    gap: 10px;
+}
+.policy_links{
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    margin-bottom: 3vh;
+}
+#payment_gateways_pic{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 5vh;
+}
+.gateway_icons{
+    height: 5vh;
+    width: 8vh;
+    border-radius: 10px;
+}
+#link_to_gateway{
+    text-decoration: none;
+}
+#copyright{
+    font-weight: 500;
+    margin-bottom: 2vh;
+}
+#clauses{
+    font-weight: 500;
+    margin-bottom: 3vh;
+}
+header{
+    top: 0;
+    height: 8vh;
+    background-color: #89f310;
+    position: absolute;
+}
+.faq{
+    width: 70vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-left: 10vw;
+    font-size: large;
+    font-weight: 400;
+    margin-bottom: 10vw;
+}
+.faq>h1{
+    margin-bottom: 2vw;
+    font-weight: 500;
+}
+.faq>p{
+    text-align: center;
+}
+#faqs{
+    list-style-type: none;
+    margin-top: 50px;
+    margin-left: 0px;
+    width: 85%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.faqs_li{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    font-size: 22px;
+    cursor: pointer;
+    flex-direction: row;
+}
